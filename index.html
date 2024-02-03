@@ -3,6 +3,13 @@
 
 <head>
     <script>
+        const globalboard = [
+            [false, false, false, false, false],
+            [false, false, false, false, false],
+            [false, false, false, false, false],
+            [false, false, false, false, false],
+            [false, false, false, false, false]
+        ]
         const myboard1 = [
             [false, false, false, false, false],
             [false, false, false, false, false],
@@ -102,6 +109,8 @@
             cells.forEach(function (cell) {
                 cell.onclick = function () {
                     cell.style.backgroundColor = "#7EABAC"
+                    console.log("Yello",cell.dataset.row, cell.dataset.column, globalboard[cell.dataset.row][cell.dataset.column])
+                    globalboard[cell.dataset.row][cell.dataset.column] = true
                 }
             })
         })
@@ -136,8 +145,8 @@
     <div class="centered">
         <table>
             <tr>
-                <td id="a1">A1 "Germane"</td>
-                <td>A2 "Abstract that away"</td>
+                <td data-row="0" data-column="0">A1 "Germane"</td>
+                <td data-row="0" data-column="1">A2 "Abstract that away"</td>
                 <td>A3 "Whereby"</td>
                 <td>A4 "Let me propose"</td>
                 <td>A5 "I claim"</td>
