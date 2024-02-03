@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang=“en”>
+
 <head>
     <script>
         const myboard1 = [
@@ -29,33 +30,77 @@
         const myboard4 = [
             [false, false, false, false, false],
             [true, false, false, false, false],
-            [false, false, false, true, false],
+            [true, true, true, true, true],
             [true, false, false, false, false],
             [true, false, false, false, false]
         ]
 
-        const myboard5 = false
 
-        if (myboard5) {
-            console.log("it's true, you win bingo");
-        } else {
-            console.log("it's false, you lose bingo");
-        }
+        function checkwin(myboard) {
+            // check rows
+            if (myboard[0][0] && myboard[0][1] && myboard[0][2] && myboard[0][3] && myboard[0][4]) {
+                return true
+            }
 
-        function checkwin(myboard){
+            if (myboard[1][0] && myboard[1][1] && myboard[1][2] && myboard[1][3] && myboard[1][4]) {
+                return true
+            }
+
+            if (myboard[2][0] && myboard[2][1] && myboard[2][2] && myboard[2][3] && myboard[2][4]) {
+                return true
+            }
+
+            if (myboard[3][0] && myboard[3][1] && myboard[3][2] && myboard[3][3] && myboard[3][4]) {
+                return true
+            }
+
+            if (myboard[4][0] && myboard[4][1] && myboard[4][2] && myboard[4][3] && myboard[4][4]) {
+                return true
+            }
+
+            // check columns
+            if (myboard[0][0] && myboard[1][0] && myboard[2][0] && myboard[3][0] && myboard[4][0]) {
+                return true
+            }
+
+            if (myboard[0][1] && myboard[1][1] && myboard[2][1] && myboard[3][1] && myboard[4][1]) {
+                return true
+            }
+
+            if (myboard[0][2] && myboard[1][2] && myboard[2][2] && myboard[3][2] && myboard[4][2]) {
+                return true
+            }
+
+            if (myboard[0][3] && myboard[1][3] && myboard[2][3] && myboard[3][3] && myboard[4][3]) {
+                return true
+            }
+
+            if (myboard[0][4] && myboard[1][4] && myboard[2][4] && myboard[3][4] && myboard[4][4]) {
+                return true
+            }
+
+            // check diagonalA
+            if (myboard[0][0] && myboard[1][1] && myboard[2][2] && myboard[3][3] && myboard[4][4]) {
+                return true
+            }
+
+            // check diagonalB
+            if (myboard[0][4] && myboard[1][3] && myboard[2][2] && myboard[3][1] && myboard[4][0]) {
+                return true
+            }
 
             return false
         }
 
-        console.log ("expect", false, "actual", checkwin (myboard1))
-        console.log ("expect", true, "actual", checkwin (myboard2))
-        console.log ("expect", true, "actual", checkwin (myboard3))
-        console.log ("expect", false, "actual", checkwin (myboard4))
+        console.log("myboard1 expect", false, "actual", checkwin(myboard1))
+        console.log("myboard2 expect", true, "actual", checkwin(myboard2))
+        console.log("myboard3 expect", true, "actual", checkwin(myboard3))
+        console.log("myboard4 expect", true, "actual", checkwin(myboard4))
 
-        document.addEventListener('DOMContentLoaded', function (){
+        document.addEventListener('DOMContentLoaded', function () {
             const cells = document.querySelectorAll("td");
-            cells.forEach(function(cell){
-                cell.onclick = function (){
+            cells.forEach(function (cell) {
+                cell.onclick = function () {
                     cell.style.backgroundColor = "#7EABAC"
                 }
             })
@@ -68,6 +113,7 @@
             color: #6B6966;
             text-align: center;
         }
+
         table,
         th,
         td {
@@ -75,6 +121,7 @@
             border-color: #EABDC0;
             background-color: #F6EDEC;
         }
+
         .centered {
             margin: auto;
             width: 50%;
@@ -83,6 +130,7 @@
     </style>
     <title>The Bingo Project</title>
 </head>
+
 <body>
     <h1>The Bingo Project</h1>
     <div class="centered">
@@ -125,4 +173,5 @@
         </table>
     </div>
 </body>
+
 </html>
