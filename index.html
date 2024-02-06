@@ -111,6 +111,11 @@
                     cell.style.backgroundColor = "#7EABAC"
                     console.log("Yello",cell.dataset.row, cell.dataset.column, globalboard[cell.dataset.row][cell.dataset.column])
                     globalboard[cell.dataset.row][cell.dataset.column] = true
+                    
+                    if (checkwin(globalboard)) {
+                        alert("Bingo!");
+                    }
+                    ;
                 }
             })
         })
@@ -147,37 +152,37 @@
             <tr>
                 <td data-row="0" data-column="0">A1 "Germane"</td>
                 <td data-row="0" data-column="1">A2 "Abstract that away"</td>
-                <td>A3 "Whereby"</td>
-                <td>A4 "Let me propose"</td>
-                <td>A5 "I claim"</td>
+                <td data-row="0" datat-column="2">A3 "Whereby"</td>
+                <td data-row="0" data-column="3">A4 "Let me propose"</td>
+                <td data-row="0" data-column="4">A5 "I claim"</td>
             </tr>
             <tr>
-                <td>B1 "Sweep under the rug"</td>
-                <td>B2 “Deliberately”</td>
-                <td>B3 "Moreover"</td>
-                <td>B4 "By contrast"</td>
-                <td>B5 Someone at Harvard asks a question you can’t hear</td>
+                <td data-row="1" data-column="0">B1 "Sweep under the rug"</td>
+                <td data-row="1" data-column="1">B2 “Deliberately”</td>
+                <td data-row="1" data-column="2">B3 "Moreover"</td>
+                <td data-row="1" data-column="3">B4 "By contrast"</td>
+                <td data-row="1" data-column="4">B5 Someone at Harvard asks a question you can’t hear</td>
             </tr>
             <tr>
-                <td>C1 "Humans"</td>
-                <td>C2 Malan moves weirdly to make the lecture look good</td>
-                <td>C3 CS50 FREE SPACE</td>
-                <td>C4 “Hopefully by now you understand [something you do not understand]”</td>
-                <td>C5 “Underneath the hood”</td>
+                <td data-row="2" data-column="0">C1 "Humans"</td>
+                <td data-row="2" data-column="1">C2 Malan moves weirdly to make the lecture look good</td>
+                <td data-row="2" data-column="2">C3 CS50 FREE SPACE</td>
+                <td data-row="2" data-column="3">C4 “Hopefully by now you understand [something you do not understand]”</td>
+                <td data-row="2" data-column="4">C5 “Underneath the hood”</td>
             </tr>
             <tr>
-                <td>D1 "It turns out that..."</td>
-                <td>D2 "More on that later"</td>
-                <td>D3 "Phew!"</td>
-                <td>D4 "Short answer / long answer"</td>
-                <td>D5 "Let me actually go ahead and..."</td>
+                <td data-row="3" data-column="0">D1 "It turns out that..."</td>
+                <td data-row="3" data-column="1">D2 "More on that later"</td>
+                <td data-row="3" data-column="2">D3 "Phew!"</td>
+                <td data-row="3" data-column="3">D4 "Short answer / long answer"</td>
+                <td data-row="3" data-column="4">D5 "Let me actually go ahead and..."</td>
             </tr>
             <tr>
-                <td>E1 "So to speak"</td>
-                <td>E2 Yale Slander</td>
-                <td>E3 "For all intents and purposes"</td>
-                <td>E4 "Admittedly"</td>
-                <td>E5 You get jealous of the Harvard kids' snack</td>
+                <td data-row="4" data-column="0">E1 "So to speak"</td>
+                <td data-row="4" data-column="1">E2 Yale Slander</td>
+                <td data-row="4" data-column="2">E3 "For all intents and purposes"</td>
+                <td data-row="4" data-column="3">E4 "Admittedly"</td>
+                <td data-row="4" data-column="4">E5 You get jealous of the Harvard kids' snack</td>
             </tr>
         </table>
     </div>
