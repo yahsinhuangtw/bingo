@@ -3,7 +3,7 @@
 
 <head>
     <script>
-        const globalboard = [
+        let globalboard = [
             [false, false, false, false, false],
             [false, false, false, false, false],
             [false, false, false, false, false],
@@ -105,17 +105,32 @@
         console.log("myboard4 expect", true, "actual", checkwin(myboard4))
 
         document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector("#play").addEventListener("click", () => {
+                globalboard = [
+                    [false, false, false, false, false],
+                    [false, false, false, false, false],
+                    [false, false, false, false, false],
+                    [false, false, false, false, false],
+                    [false, false, false, false, false]
+                ]
+                document.querySelectorAll("td").forEach(function (cell){
+                    cell.style.backgroundColor = "#F6EDEC"
+                })
+            });
             const cells = document.querySelectorAll("td");
             cells.forEach(function (cell) {
                 cell.onclick = function () {
                     cell.style.backgroundColor = "#7EABAC"
-                    console.log("Yello",cell.dataset.row, cell.dataset.column, globalboard[cell.dataset.row][cell.dataset.column])
+                    console.log("Yello", cell.dataset.row, cell.dataset.column, globalboard[cell.dataset.row][cell.dataset.column])
                     globalboard[cell.dataset.row][cell.dataset.column] = true
-                    
+
+                    console.log(globalboard)
+
                     if (checkwin(globalboard)) {
                         alert("Bingo!");
                     }
                     ;
+
                 }
             })
         })
@@ -141,6 +156,14 @@
             width: 50%;
             padding: 10px;
         }
+
+        button:hover {
+            background-color:#F4BB83;
+            padding: 4px 4px;
+            font-size: 14px;
+            border-radius: 20%;
+            /* Circular button */
+        }
     </style>
     <title>The Bingo Project</title>
 </head>
@@ -148,11 +171,12 @@
 <body>
     <h1>The Bingo Project</h1>
     <div class="centered">
+        <button id="play">PLAY</button>
         <table>
             <tr>
                 <td data-row="0" data-column="0">A1 "Germane"</td>
                 <td data-row="0" data-column="1">A2 "Abstract that away"</td>
-                <td data-row="0" datat-column="2">A3 "Whereby"</td>
+                <td data-row="0" data-column="2">A3 "Whereby"</td>
                 <td data-row="0" data-column="3">A4 "Let me propose"</td>
                 <td data-row="0" data-column="4">A5 "I claim"</td>
             </tr>
@@ -167,7 +191,8 @@
                 <td data-row="2" data-column="0">C1 "Humans"</td>
                 <td data-row="2" data-column="1">C2 Malan moves weirdly to make the lecture look good</td>
                 <td data-row="2" data-column="2">C3 CS50 FREE SPACE</td>
-                <td data-row="2" data-column="3">C4 “Hopefully by now you understand [something you do not understand]”</td>
+                <td data-row="2" data-column="3">C4 “Hopefully by now you understand [something you do not understand]”
+                </td>
                 <td data-row="2" data-column="4">C5 “Underneath the hood”</td>
             </tr>
             <tr>
