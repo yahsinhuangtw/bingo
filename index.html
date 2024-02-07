@@ -127,10 +127,9 @@
                     console.log(globalboard)
 
                     if (checkwin(globalboard)) {
-                        alert("Bingo!");
+                        document.querySelector("#dudebingo").style.display = "block";
                     }
                     ;
-
                 }
             })
         })
@@ -210,8 +209,7 @@
                 <td data-row="4" data-column="4">E5 You get jealous of the Harvard kids' snack</td>
             </tr>
         </table>
-        <iframe id="dudebingo" src="https://giphy.com/embed/UUNPgjorsaWHu" width="480" height="272" frameBorder="0" class="giphy-embed"
-            allowFullScreen alt=“Dude Bingo" class=”hide” style="display: none;"></iframe>
+        <img id="dudebingo" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHM5aXlwYjluN3g5amttM2kwcWQ4ZXN5eW1qb2Jocnc2bnU3YXdqcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UUNPgjorsaWHu/giphy.gif" class=”hide” style="display: none;">
     </div>
 </body>
 </html>
